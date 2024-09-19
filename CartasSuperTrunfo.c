@@ -1,21 +1,23 @@
 #include <stdio.h>
 
 int main() {
-
     int populacao, turistico;
     float area, pib;
     char cidade[20];
     char estado;
-    char codigo[3];
+    char codigo[5];
+
+    printf("Bem-vindo ao Super Trunfo! \nInsira as informações abaixo:\n");
+    printf("--------------------------\n");
 
     printf("Digite o nome da cidade: \n");
-    scanf("%s", &cidade);
+    scanf("%s", cidade);
 
     printf("Digite o código do estado (A-H): \n");
     scanf(" %c", &estado);
 
     printf("Digite o código da cidade (letra + 01-04): \n");
-    scanf("%s", &codigo);
+    scanf("%s", codigo);
 
     printf("Digite a população da cidade: \n");
     scanf("%d", &populacao);
@@ -34,10 +36,10 @@ int main() {
     printf("Estado: %c \n", estado);
     printf("Código: %s \n", codigo);
     printf("População: %d habitantes \n", populacao);
-    printf("Área: %f km2 \n", area);
-    printf("PIB: %f milhões de reais \n", pib);
+    printf("Área: %.2f km2 \n", area);
+    printf("PIB: %.3f milhões de reais \n", pib);
     printf("Número de pontos turísticos: %d \n", turistico);
     printf("-------------------------- \n");
 
-    return;
+    return 0;
 }
