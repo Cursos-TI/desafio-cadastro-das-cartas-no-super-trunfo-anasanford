@@ -1,15 +1,19 @@
 #include <stdio.h>
 
 int main() {
+
+    //criação das variáveis
     int populacao, turistico;
     float area, pib;
     char cidade[20];
     char estado;
     char codigo[5];
 
+    //mensagem inicial
     printf("Bem-vindo ao Super Trunfo! \nInsira as informações abaixo:\n");
     printf("--------------------------\n");
 
+    //obtenção das inforções das cartas, inseridas pelo usuário
     printf("Digite o nome da cidade: \n");
     scanf("%s", cidade);
 
@@ -31,6 +35,7 @@ int main() {
     printf("Digite o número de pontos turísticos da cidade: \n");
     scanf("%d", &turistico);
 
+    //mostrando o resultado na tela para o usuário
     printf("-------------------------- \n");
     printf("Cidade: %s \n", cidade);
     printf("Estado: %c \n", estado);
