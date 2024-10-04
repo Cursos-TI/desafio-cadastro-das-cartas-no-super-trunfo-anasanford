@@ -61,7 +61,7 @@ int main() {
     pibPerCapta2 = (pib2 * 1000000) / populacao2;
 
     //mostrando as informações da primeira carta ao usuário:
-    printf("-------- %s --------- \n", cidade1);
+    printf("----------- %s ------------ \n", cidade1);
     printf("Estado: %c \n", estado1);
     printf("Código: %s \n", codigo1);
     printf("População: %d habitantes \n", populacao1);
@@ -70,10 +70,10 @@ int main() {
     printf("Número de pontos turísticos: %d \n", turistico1);
     printf("Densidade populacional: %.2lf habitantes/km2 \n", densidadePopulacional1);
     printf("PIB per capta: %.3lf reais/habitante \n", pibPerCapta1);
-    printf("------------------------------------ \n");
+    printf("---------------------------------------------- \n");
 
     //mostrando as informações da segunda carta ao usuário
-    printf("-------- %s --------- \n", cidade2);
+    printf("----------- %s ------------ \n", cidade2);
     printf("Estado: %c \n", estado2);
     printf("Código: %s \n", codigo2);
     printf("População: %d habitantes \n", populacao2);
@@ -82,10 +82,44 @@ int main() {
     printf("Número de pontos turísticos: %d \n", turistico2);
     printf("Densidade populacional: %.2lf habitantes/km2 \n", densidadePopulacional2);
     printf("PIB per capta: %.3lf reais/habitante \n", pibPerCapta2);
-    printf("------------------------------------ \n");
+    printf("----------------------------------------------- \n \n");
 
-    //fazendo as comparações ("Agora vamos comparar as cartas!")
+    //mensagem inicial para a comparação das cartas
+    printf("xxxxxxxxxxxxxxxx BATALHA DE CARTAS xxxxxxxxxxxxxxxx\n");
+    printf("Agora vamos comparar as cartas e decidir uma vencedora com base nas propriedades de cada uma!\n");
+    printf("REGRAS:\n");
+    printf("Se o resultado for 1 = a carta %s ganha!\n", cidade1);
+    printf("Se o resultado for 0 = a carta %s ganha!\n", cidade2);
+    printf("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
 
+    //fazendo as comparações entre as cartas
+    printf("----------------- \n");
+    printf("POPULAÇÃO: %s (%d habitantes) X %s (%d habitantes) = %d \n", cidade1, populacao1, cidade2, populacao2, populacao1 > populacao2);
+    printf("----------------- \n");
+    printf("ÁREA: %s (%f km2) X %s (%f km2) = %d \n", cidade1, area1, cidade2, area2, area1 > area2);
+    printf("----------------- \n");
+    printf("----------------- \n");
+    printf("PIB: %s (%f milhões) X %s (%f milhões) = %d \n", cidade1, pib1, cidade2, pib2, pib1 > pib2);
+    printf("----------------- \n");
+    printf("NÚMERO DE PONTOS TURÍSTICOS: %s (%d pontos) X %s (%d pontos) = %d \n", cidade1, turistico1, cidade2, turistico2, turistico1 > turistico2);
+    printf("----------------- \n");
+    printf("DENSIDADE POPULACIONAL: %s (%.2f habitantes/km2) X %s (%.2f habitantes/km2) = %d \n", cidade1, densidadePopulacional1, cidade2, densidadePopulacional2, densidadePopulacional1 < densidadePopulacional2);
+    printf("----------------- \n");
+    printf("PIB PER CAPTA: %s (%.3f reais/habitante) X %s (%.3f reais/habitantes) = %d \n", cidade1, pibPerCapta1, cidade2, pibPerCapta2, pibPerCapta1 > pibPerCapta2);
+    printf("----------------- \n");
 
-    return 0;    
+    //cálculo do Super Poder
+    float superPoder1 = (float)populacao1 + area1 + pib1 + (float)turistico1 + pibPerCapta1 + (area1 / populacao1);
+    float superPoder2 = (float)populacao2 + area2 + pib2 + (float)turistico2 + pibPerCapta2 + (area2 / populacao2);
+
+    //exibindo o ganhador do super poder
+    printf("--- SUPER PODER! --- \n");
+    printf("Ganha quem tiver a maior soma de todas as propriedades! \n");
+    printf("Super poder %s = %f \n", cidade1, superPoder1);
+    printf("Super poder %s = %f \n", cidade2, superPoder2);
+    printf("---------------------\n");
+    printf("E o vencedor entre %s e %s é... = %d! \n", cidade1, cidade2, superPoder1 > superPoder2);
+    printf("PARABÉNS!");
+
+    return 0;   
 }
