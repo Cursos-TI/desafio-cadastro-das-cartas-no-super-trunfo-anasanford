@@ -90,14 +90,13 @@ int main() {
     printf("REGRAS:\n");
     printf("Se o resultado for 1 = a carta %s ganha!\n", cidade1);
     printf("Se o resultado for 0 = a carta %s ganha!\n", cidade2);
-    printf("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n");
+    printf("Boa sorte! \n");
 
     //fazendo as comparações entre as cartas
     printf("----------------- \n");
     printf("POPULAÇÃO: %s (%d habitantes) X %s (%d habitantes) = %d \n", cidade1, populacao1, cidade2, populacao2, populacao1 > populacao2);
     printf("----------------- \n");
     printf("ÁREA: %s (%f km2) X %s (%f km2) = %d \n", cidade1, area1, cidade2, area2, area1 > area2);
-    printf("----------------- \n");
     printf("----------------- \n");
     printf("PIB: %s (%f milhões) X %s (%f milhões) = %d \n", cidade1, pib1, cidade2, pib2, pib1 > pib2);
     printf("----------------- \n");
@@ -108,7 +107,7 @@ int main() {
     printf("PIB PER CAPTA: %s (%.3f reais/habitante) X %s (%.3f reais/habitantes) = %d \n", cidade1, pibPerCapta1, cidade2, pibPerCapta2, pibPerCapta1 > pibPerCapta2);
     printf("----------------- \n");
 
-    //cálculo do Super Poder
+    //criando variáveis e fazendo o cálculo do Super Poder
     float superPoder1 = (float)populacao1 + area1 + pib1 + (float)turistico1 + pibPerCapta1 + (area1 / populacao1);
     float superPoder2 = (float)populacao2 + area2 + pib2 + (float)turistico2 + pibPerCapta2 + (area2 / populacao2);
 
@@ -119,7 +118,7 @@ int main() {
     printf("Super poder %s = %f \n", cidade2, superPoder2);
     printf("---------------------\n");
     printf("E o vencedor entre %s e %s é... = %d! \n", cidade1, cidade2, superPoder1 > superPoder2);
-    printf("PARABÉNS!");
+    printf("PARABÉNS! \n");
 
     return 0;   
 }
