@@ -34,7 +34,7 @@ int main() {
     printf("Digite o número de pontos turísticos da cidade: ");
     scanf("%d", &turistico1);
 
-    //obtendo as informações da segunda carta, inserida pelo usuário:
+    //obtendo as informações da segunda carta, inseridas pelo usuário:
     printf("----------------\n");
     printf("Agora insira as informações da segunda carta!\n");
     printf("Digite o nome segunda cidade: ");
@@ -61,7 +61,7 @@ int main() {
     pibPerCapta2 = (pib2 * 1000000) / populacao2;
 
     //mostrando as informações da primeira carta ao usuário:
-    printf("----------- %s ------------ \n", cidade1);
+    printf(" \n----------- %s ------------ \n", cidade1);
     printf("Estado: %c \n", estado1);
     printf("Código: %s \n", codigo1);
     printf("População: %d habitantes \n", populacao1);
@@ -87,24 +87,46 @@ int main() {
     //mensagem inicial para a comparação das cartas
     printf("xxxxxxxxxxxxxxxx BATALHA DE CARTAS xxxxxxxxxxxxxxxx\n");
     printf("Agora vamos comparar as cartas e decidir uma vencedora com base nas propriedades de cada uma!\n");
-    printf("REGRAS:\n");
-    printf("Se o resultado for 1 = a carta %s ganha!\n", cidade1);
-    printf("Se o resultado for 0 = a carta %s ganha!\n", cidade2);
     printf("Boa sorte! \n");
+    printf("----------------- \n");
 
     //fazendo as comparações entre as cartas
-    printf("----------------- \n");
-    printf("POPULAÇÃO: %s (%d habitantes) X %s (%d habitantes) = %d \n", cidade1, populacao1, cidade2, populacao2, populacao1 > populacao2);
-    printf("----------------- \n");
-    printf("ÁREA: %s (%f km2) X %s (%f km2) = %d \n", cidade1, area1, cidade2, area2, area1 > area2);
-    printf("----------------- \n");
-    printf("PIB: %s (%f milhões) X %s (%f milhões) = %d \n", cidade1, pib1, cidade2, pib2, pib1 > pib2);
-    printf("----------------- \n");
-    printf("NÚMERO DE PONTOS TURÍSTICOS: %s (%d pontos) X %s (%d pontos) = %d \n", cidade1, turistico1, cidade2, turistico2, turistico1 > turistico2);
-    printf("----------------- \n");
-    printf("DENSIDADE POPULACIONAL: %s (%.2f habitantes/km2) X %s (%.2f habitantes/km2) = %d \n", cidade1, densidadePopulacional1, cidade2, densidadePopulacional2, densidadePopulacional1 < densidadePopulacional2);
-    printf("----------------- \n");
-    printf("PIB PER CAPTA: %s (%.3f reais/habitante) X %s (%.3f reais/habitantes) = %d \n", cidade1, pibPerCapta1, cidade2, pibPerCapta2, pibPerCapta1 > pibPerCapta2);
+    //comparando as populações
+    if (populacao1 > populacao2) {
+        printf("POPULAÇÃO => %s ganhou!\n", cidade1);
+    } else {
+        printf("POPULAÇÃO => %s ganhou!\n", cidade2);
+    };
+    //comparando a área
+    if (area1 > area2) {
+        printf("ÁREA => %s ganhou!\n", cidade1);
+    } else {
+        printf("ÁREA => %s ganhou!\n", cidade2);
+    };
+    //comparando o PIB
+    if (pib1 > pib2) {
+        printf("PIB => %s ganhou!\n", cidade1);
+    } else {
+        printf("PIB => %s ganhou!\n", cidade2);
+    };
+    //comparando os pontos turísticos
+    if (turistico1 > turistico2) {
+        printf("PONTOS TURÍSTICOS => %s ganhou!\n", cidade1);
+    } else {
+        printf('PONTOS TURÍSTICOS => %s ganhou!\n', cidade2);
+    };
+    //comparando a densidade populacional
+    if (densidadePopulacional1 < densidadePopulacional2) {
+        printf("DENSIDADE POPULACIONAL => %s ganhou!\n", cidade1);
+    } else {
+        printf("DENSIDADE POPULACIONAL => %s ganhou!\n", cidade2);
+    };
+    //comparando o pib per capta
+    if (pibPerCapta1 > pibPerCapta2) {
+        printf("PIB PER CAPTA => %s ganhou!\n", cidade1);
+    } else {
+        printf("PIB PER CAPTA => %s ganhou!\n", cidade2);
+    };
     printf("----------------- \n");
 
     //criando variáveis e fazendo o cálculo do Super Poder
@@ -114,10 +136,14 @@ int main() {
     //exibindo o ganhador do super poder
     printf("--- SUPER PODER! --- \n");
     printf("Ganha quem tiver a maior soma de todas as propriedades! \n");
-    printf("Super poder %s = %f \n", cidade1, superPoder1);
-    printf("Super poder %s = %f \n", cidade2, superPoder2);
+    printf("Super poder %s = %.3f pontos\n", cidade1, superPoder1);
+    printf("Super poder %s = %.3f pontos\n", cidade2, superPoder2);
     printf("---------------------\n");
-    printf("E o vencedor entre %s e %s é... = %d! \n", cidade1, cidade2, superPoder1 > superPoder2);
+    if (superPoder1 > superPoder2) {
+        printf("E o vencedor entre %s e %s é... %s!\n", cidade1, cidade2, cidade1);
+    } else {
+        printf("E o vencedor entre %s e %s é... %s!\n", cidade1, cidade2, cidade2);
+    }
     printf("PARABÉNS! \n");
 
     return 0;   
